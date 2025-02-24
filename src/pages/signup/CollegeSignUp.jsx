@@ -21,7 +21,26 @@ export function CollegeSignUp() {
                     labelName: "College Code",
                     inputId: "clgCode"
                 },
+                {
+                    labelName: "LinkedIn link",
+                    inputId: "linkedInLink",
+                }
             ],
+            rightInput: [
+                {
+                    labelName: "Email",
+                    inputId: "email",
+                    inputType: "email",
+                },
+                {
+                    labelName: "Phone",
+                    inputId: "phone",
+                },
+                {
+                    labelName: "Website",
+                    inputId: "website",
+                }
+            ]
         },
     ];
 
@@ -39,6 +58,7 @@ export function CollegeSignUp() {
 
                 {fieldsJson.map((segment, i) => (
                     <FormSegment
+                        key={i}
                         segmentHeader={segment.segmentHeader}
                         leftInput={segment.leftInput}
                         rightInput={segment.rightInput}
@@ -53,7 +73,6 @@ export function CollegeSignUp() {
                     mt={1}
                 >
                     <Checkbox
-                        onChange={handleCheck}
                         size="small"
                         sx={{
                             "&.Mui-checked": {
