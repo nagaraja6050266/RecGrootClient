@@ -71,7 +71,6 @@ function createData({
     );
 
     const renderedAccessTo = <AccessToButton contentArray={accessTo} />;
-    console.log(renderedAccessTo);
     const sNo = index++;
     const renderedStatus = (
         <Typography color={status == "Active" ? "#188918" : "#D91313"} fontSize={13} fontWeight={500} >

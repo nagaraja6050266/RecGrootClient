@@ -9,13 +9,17 @@ import IntroPage from "./pages/intro/index.jsx";
 import OtpForm from "./pages/password/otpForm";
 import PasswordForm from "./pages/password/passwordForm";
 import SignInForm from "./pages/signin/SignInForm";
-import SignUpForm from "./pages/signup/StudentSignUp.jsx";
+import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
+import { FormSegment } from "./pages/signup/FormSegment.jsx";
+import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 
 function App() {
     return (
         <Routes>
+            <Route path="/test" element={<FormSegment/>} />
             <Route path="/" element={<IntroPage />} />
-            <Route path="/signup" element={<SignUpForm />} />
+            <Route path="/student/signup" element={<StudentSignUpForm />} />
+            <Route path="/institute/signup" element={<CollegeSignUp/>} />
             <Route element={<IndexTemplate page={" "} />}>
                 <Route path="/signin" element={<SignInForm />} />
                 <Route

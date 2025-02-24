@@ -13,8 +13,8 @@ function CustomLabelInput({
     inputId,
     placeHolder = "Enter " + labelName,
     errMsg = " ",
-    width,
-    mandatory = false,
+    width = "100%",
+    mandatory = false,  
     optionsArray = [],
 }) {
     return (

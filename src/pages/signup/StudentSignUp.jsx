@@ -1,14 +1,18 @@
-import { Box, Grid, Typography, Checkbox } from "@mui/material";
+import { Box, Checkbox, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
 import {
     CenteredBox,
     FlexBox,
     StyledButton,
     StyledSpan,
 } from "../../components/styled-components/styledComponents";
-import { LOC_TYPE_CONST, JOIN_TYPE_CONST, GENDER_CONST } from "../../Constants.js";
+import {
+    GENDER_CONST,
+    JOIN_TYPE_CONST,
+    LOC_TYPE_CONST,
+} from "../../Constants.js";
+import { FormSegment } from "./FormSegment.jsx";
 
 const Colleges = ["GCE", "Anna Univ", "FXEC"];
 const Departments = ["CSE", "ECE", "EEE"];
@@ -30,6 +34,156 @@ function StudentSignUp() {
     const [fullnameErrorMsg, setFullnameErrorMsg] = useState(" ");
     const [mobileErrorMsg, setMobileErrorMsg] = useState(" ");
     const [pincodeErrMsg, setPicodeErrMsg] = useState(" ");
+
+    const fieldsJson = [
+        {
+            segmentHeader: "Personal Details",
+            leftInput: [
+                {
+                    labelName: "Full Name",
+                    inputId: "name",
+                    errMsg: fullnameErrorMsg,
+                },
+                {
+                    labelName: "Date of Birth",
+                    inputId: "dob", //Date type should be added
+                },
+            ],
+            rightInput: [
+                {
+                    labelName: "Gender",
+                    inputId: "gender",
+                    inputType: "dropdown",
+                    optionsArray: GENDER_CONST,
+                },
+                {
+                    labelName: "Parents Number",
+                    inputId: "parentNo",
+                },
+            ],
+        },
+        {
+            segmentHeader: "Contact Details",
+            leftInput: [
+                {
+                    labelName: "Email",
+                    inputType: "email",
+                    inputId: "email",
+                    errMsg: emailErrorMsg,
+                },
+                {
+                    labelName: "LinkedIn Profile Link",
+                    inputId: "linkedInLink",
+                },
+            ],
+            rightInput: [
+                {
+                    labelName: "Mobile Number",
+                    inputId: "mobile",
+                    errMsg: mobileErrorMsg,
+                },
+                {
+                    labelName: "Other link",
+                    inputId: "otherLink",
+                },
+            ],
+        },
+        {
+            segmentHeader: "Address",
+            leftInput: [
+                {
+                    labelName: "Address Line 1",
+                    inputId: "addressLine1",
+                },
+                {
+                    labelName: "Landmark",
+                    inputId: "landmark",
+                },
+                {
+                    labelName: "District",
+                    inputId: "district",
+                },
+                {
+                    labelName: "Pincode",
+                    inputId: "pincode",
+                },
+            ],
+            rightInput: [
+                {
+                    labelName: "Address Line 2",
+                    inputId: "addressLine2",
+                },
+                {
+                    labelName: "City",
+                    inputId: "city",
+                },
+                {
+                    labelName: "State",
+                    inputId: "state",
+                },
+                {
+                    labelName: "Location Type",
+                    inputId: "locationType",
+                    inputType: "dropdown",
+                    optionsArray: LOC_TYPE_CONST,
+                },
+            ],
+        },
+        {
+            segmentHeader: "Academic Details",
+            leftInput: [
+                {
+                    labelName: "College",
+                    inputType: "dropdown",
+                    inputId: "college",
+                    optionsArray: Colleges,
+                },
+                {
+                    labelName: "Register Number",
+                    inputId: "regNo",
+                },
+                {
+                    labelName: "Joining Type",
+                    inputId: "joinType",
+                    inputType: "dropdown",
+                    optionsArray: JOIN_TYPE_CONST,
+                },
+                {
+                    labelName: "CGPA",
+                    inputId: "cgpa",
+                },
+                {
+                    labelName: "HSC/Diploma Percentage",
+                    inputId: "hscDiplomaPercentage",
+                },
+            ],
+            rightInput: [
+                {
+                    labelName: "Department",
+                    inputId: "department",
+                    inputType: "dropdown",
+                    optionsArray: Departments,
+                },
+
+                {
+                    labelName: "Date of Joining",
+                    inputId: "date",
+                },
+                {
+                    labelName: "Graduation Year",
+                    inputId: "graduationYear",
+                },
+                {
+                    labelName: "SSLC Percentage",
+                    inputId: "sslcPercentage",
+                },
+                {
+                    labelName: "Placement Status",
+                    inputId: "placementStatus",
+                },
+            ],
+        },
+    ];
 
     let fullname, email, mobileNumber;
     function isFormFilled() {
@@ -101,281 +255,49 @@ function StudentSignUp() {
                         Enter your details below to create your account
                     </Typography>
                 </Box>
-                <Typography
-                    mt={4}
-                    variant="h5"
-                    color="primary"
-                    fontWeight="bold"
+
+                {fieldsJson.map((segment, i) => (
+                    <FormSegment
+                        segmentHeader={segment.segmentHeader}
+                        leftInput={segment.leftInput}
+                        rightInput={segment.rightInput}
+                    />
+                ))}
+
+                {/* Terms and conditions agree box */}
+                <FlexBox
+                    alignItems="center"
+                    justifyContent="left"
+                    width="100%"
+                    mt={1}
                 >
-                    Personal Details
-                </Typography>
-                <Grid container item xs={12} spacing={2}>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Full Name"
-                            inputId="name"
-                            value="name"
-                            errMsg={fullnameErrorMsg}
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Gender"
-                            inputId="gender"
-                            inputType="dropdown"
-                            optionsArray={GENDER_CONST}
-                        />
-                    </Grid>
-                </Grid>
-                <Grid container item xs={12} spacing={2}>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Date of Birth"
-                            inputId="dob"
-                            inputType="text"
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Parent's Number"
-                            inputId="parentNumber"
-                            inputType="text"
-                        />
-                    </Grid>
-                </Grid>
-                <Typography
-                    mt={4}
-                    variant="h5"
-                    color="primary"
-                    fontWeight="bold"
-                >
-                    Contact Details
-                </Typography>
-
-                <Grid container item xs={12} spacing={2}>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Email"
-                            inputType="email"
-                            inputId="email"
-                            errMsg={emailErrorMsg}
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <CustomLabelInput
-                            labelName="Mobile Number"
-                            inputId="mobile"
-                            errMsg={mobileErrorMsg}
-                        />
-                    </Grid>
-                </Grid>
-
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="LinkedIn Profile Link"
-                                inputId="linkedInLink"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Other link"
-                                inputId="otherLink"
-                            />
-                        </Grid>
-                    </Grid>
-
+                    <Checkbox
+                        onChange={handleCheck}
+                        size="small"
+                        sx={{
+                            "&.Mui-checked": {
+                                color: "#00205c",
+                            },
+                        }}
+                        defaultChecked
+                    />
                     <Typography
-                        mt={4}
-                        variant="h5"
-                        color="primary"
-                        fontWeight="bold"
+                        width="fit-content"
+                        variant="body1"
+                        color="#5B738B"
+                        align="left"
+                        fontSize={12}
                     >
-                        Address
-                    </Typography>
-
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Address Line 1"
-                                inputId="addressLine1"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Address Line 2"
-                                inputId="addressLine2"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Landmark"
-                                inputId="landmark"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput labelName="City" inputId="city" />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="District"
-                                inputId="district"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="State"
-                                inputId="state"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Pincode"
-                                inputId="pincode"
-                                errMsg={pincodeErrMsg}
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Location Type"
-                                optionsArray={LOC_TYPE_CONST}
-                                inputType="dropdown"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Typography
-                        mt={4}
-                        variant="h5"
-                        color="primary"
-                        fontWeight="bold"
-                    >
-                        Academic Details
-                    </Typography>
-
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="College"
-                                inputType="dropdown"
-                                inputId="college"
-                                optionsArray={Colleges}
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Department"
-                                inputId="department"
-                                inputType="dropdown"
-                                optionsArray={Departments}
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Register Number"
-                                inputType="text"
-                                inputId="regNo"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Date of Joining"
-                                inputId="date"
-                                inputType="text"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Joining Type"
-                                inputType="dropdown"
-                                inputId="joinType"
-                                optionsArray={JOIN_TYPE_CONST}
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Graduation Year"
-                                inputId="graduationYear"
-                                inputType="text"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="CGPA"
-                                inputId="cgpa"
-                                inputType="text"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="SSLC Percentage"
-                                inputId="sslcPercentage"
-                                inputType="text"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Grid container item xs={12} spacing={2}>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="HSC/Diploma Percentage"
-                                inputId="hscDiplomaPercentage"
-                                inputType="text"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <CustomLabelInput
-                                labelName="Placement Status"
-                                inputId="placementStatus"
-                                inputType="text"
-                            />
-                        </Grid>
-                    </Grid>
-
-                    {/* Terms and conditions agree box */}
-                    <FlexBox
-                        alignItems="center"
-                        justifyContent="left"
-                        width="100%"
-                        mt={1}
-                    >
-                        <Checkbox
-                            onChange={handleCheck}
-                            size="small"
-                            sx={{
-                                "&.Mui-checked": {
-                                    color: "#00205c",
-                                },
-                            }}
-                            defaultChecked
-                        />
-                        <Typography
-                            width="fit-content"
-                            variant="body1"
+                        I agree to the{" "}
+                        <StyledSpan
+                            href="/signup"
+                            textDecoration="underline"
                             color="#5B738B"
-                            align="left"
-                            fontSize={12}
                         >
-                            I agree to the{" "}
-                            <StyledSpan
-                                href="/signup"
-                                textDecoration="underline"
-                                color="#5B738B"
-                            >
-                                Terms and Conditions
-                            </StyledSpan>
-                        </Typography>
-                    </FlexBox>
+                            Terms and Conditions
+                        </StyledSpan>
+                    </Typography>
+                </FlexBox>
 
                 <FlexBox flexDirection="column" width="100%" mt={5}>
                     <FlexBox gap="20px">

@@ -3,29 +3,29 @@ import CustomLabelInput from "../../components/styled-components/CustomLabelInpu
 import { FlexBox } from "../../components/styled-components/styledComponents";
 
 export function FormSegment({ segmentHeader, leftInput, rightInput }) {
+    const getCustomLabelInput = (input, key) => {
+        return (
+            <CustomLabelInput
+                key={key}
+                labelName={input.labelName}
+                inputType={input.inputType}
+                inputId={input.inputId}
+                placeHolder={input.placeHolder}
+                errMsg={input.errMsg}
+                width={input.width}
+                mandatory={input.mandatory}
+                optionsArray={input.optionsArray}
+            />
+        );
+    };
 
-    const getCustomLabelInput = (input) => {
-        return <CustomLabelInput
-            labelName={input.labelName}
-            inputType={input.inputType}
-            inputId={input.inputId}
-            placeHolder={input.placeHolder}
-            errMsg={input.errMsg}
-            width={input.width}
-            mandatory={input.mandatory}
-            optionsArray={input.mandatory}
-        />
-    }
+    const leftInputs = leftInput.map((input, i) =>
+        getCustomLabelInput(input, i)
+    );
 
-    const menuItems = optionsArray.map((option, i) => (
-        <MenuItem sx={{ fontSize: "11px" }} key={i} value={option}>
-            {option}
-        </MenuItem>
-    ));
-
-    const rightInputs = rightInput.map((input, i) => (
-        
-    ));
+    const rightInputs = rightInput.map((input, i) =>
+        getCustomLabelInput(input, i)
+    );
 
     return (
         <>
@@ -33,26 +33,10 @@ export function FormSegment({ segmentHeader, leftInput, rightInput }) {
                 {segmentHeader}
             </Typography>
 
-            <FlexBox>
-                <FlexBox flexDirection={"column"}>
-                    {rightInputs}
-                </FlexBox>
+            <FlexBox gap={2}>
+                <FlexBox flexDirection={"column"}>{...leftInputs}</FlexBox>
+                <FlexBox flexDirection={"column"}>{...rightInputs}</FlexBox>
             </FlexBox>
-
-            <Grid container item xs={12} spacing={2}>
-                <Grid item xs={6}>
-                    <CustomLabelInput
-                        labelName="LinkedIn Profile Link"
-                        inputId="linkedInLink"
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <CustomLabelInput
-                        labelName="Other link"
-                        inputId="otherLink"
-                    />
-                </Grid>
-            </Grid>
         </>
     );
 }
