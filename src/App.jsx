@@ -12,11 +12,12 @@ import SignInForm from "./pages/signin/SignInForm";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import { FormSegment } from "./pages/signup/FormSegment.jsx";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
+import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 
 function App() {
     return (
         <Routes>
-            <Route path="/test" element={<FormSegment/>} />
+            <Route path="/test" element={<DepartmentAddComponent/>} />
             <Route path="/" element={<IntroPage />} />
             <Route path="/student/signup" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp/>} />

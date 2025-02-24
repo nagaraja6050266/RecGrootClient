@@ -14,8 +14,8 @@ export function CollegeSignUp() {
             segmentHeader: "Institute Details",
             leftInput: [
                 {
-                    labelName: "Name",
-                    inputId: "name",
+                    labelName: "College Name",
+                    inputId: "clgName",
                 },
                 {
                     labelName: "College Code",
@@ -49,10 +49,10 @@ export function CollegeSignUp() {
             <Box width="60%">
                 <Box pl={0}>
                     <Typography variant="h4" component="h1" fontWeight="bold">
-                        Sign Up
+                        Institute Sign Up
                     </Typography>
                     <Typography variant="body1" color="textSecondary">
-                        Enter your details below to create your account
+                        Enter institute details below to create your account
                     </Typography>
                 </Box>
 
