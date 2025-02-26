@@ -14,8 +14,9 @@ function CustomLabelInput({
     placeHolder = "Enter " + labelName,
     errMsg = " ",
     width = "100%",
-    mandatory = false,  
-    optionsArray = [],
+    mandatory = false, 
+    optionsJson, 
+    optionsArray = optionsJson ? Object.values(optionsJson) : [],
 }) {
     return (
         <CustomLabelInputContainer width={width}>
@@ -23,7 +24,7 @@ function CustomLabelInput({
             {inputType == "date" ? (
                 <StyledDatePicker />
             ) : inputType == "dropdown" ? (
-                <DropDown width={0} optionsArray={optionsArray}></DropDown>
+                <DropDown id={inputId} width={0} optionsArray={optionsArray}></DropDown>
             ) : inputType == "password" ? (
                 <PasswordInput
                     id={inputId}

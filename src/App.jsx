@@ -10,7 +10,6 @@ import OtpForm from "./pages/password/otpForm";
 import PasswordForm from "./pages/password/passwordForm";
 import SignInForm from "./pages/signin/SignInForm";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
-import { FormSegment } from "./pages/signup/FormSegment.jsx";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 

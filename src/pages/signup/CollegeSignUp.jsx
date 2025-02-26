@@ -7,6 +7,32 @@ import {
 } from "../../components/styled-components/styledComponents";
 import { Checkbox, Typography } from "@mui/material";
 import { FormSegment } from "./FormSegment";
+import { DepartmentAddComponent } from "./DepartmentsAddComponent";
+
+// const depts = [
+//     {
+//         id: 1,
+//         name: "Computer Science",
+//     },
+//     {
+//         id: 2,
+//         name: "Electronics",
+//     },
+//     {
+//         id: 3,
+//         name: "Mechanical",
+//     },
+//     {
+//         id: 4,
+//         name: "Civil",
+//     },
+//     {
+//         id: 5,
+//         name: "Electrical",
+//     },
+// ];
+
+const depts = ["Computer Science", "Electronics", "Mechanical", "Civil", "Electrical"];
 
 export function CollegeSignUp() {
     const fieldsJson = [
@@ -19,12 +45,12 @@ export function CollegeSignUp() {
                 },
                 {
                     labelName: "College Code",
-                    inputId: "clgCode"
+                    inputId: "clgCode",
                 },
                 {
                     labelName: "LinkedIn link",
                     inputId: "linkedInLink",
-                }
+                },
             ],
             rightInput: [
                 {
@@ -39,8 +65,8 @@ export function CollegeSignUp() {
                 {
                     labelName: "Website",
                     inputId: "website",
-                }
-            ]
+                },
+            ],
         },
     ];
 
@@ -64,6 +90,8 @@ export function CollegeSignUp() {
                         rightInput={segment.rightInput}
                     />
                 ))}
+
+                <DepartmentAddComponent depts={depts} />
 
                 {/* Terms and conditions agree box */}
                 <FlexBox

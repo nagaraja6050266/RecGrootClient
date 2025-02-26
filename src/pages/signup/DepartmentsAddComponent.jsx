@@ -1,89 +1,58 @@
 import { useState } from "react";
 import { FlexBox } from "../../components/styled-components/styledComponents";
-import { Typography, Checkbox } from "@mui/material";
+import { Typography } from "@mui/material";
 import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
-import StyledButton from "../../components/styled-components/StyledButton";
+import { StyledButton } from "../../components/styled-components/styledComponents";
 
 export function DepartmentAddComponent({ depts }) {
-    const [additionalDepts, setAdditionalDepts] = useState([
-        <CustomLabelInput
-            key={0}
-            labelName="Department"
-            inputType="text"
-            inputId="department"
-            placeHolder="Enter Department"
-            errMsg="Department is required"
-            width="100%"
-            mandatory={true}
-        />,
-    ]);
+    const [additionalDepts, setAdditionalDepts] = useState([]);
 
     const defaultRenderCount = 5;
+    const [currCount, setCurrCount] = useState(defaultRenderCount + 1);
 
     const handleAddDept = () => {
+        setCurrCount((c) => c + 1);
         setAdditionalDepts((a) => [
             ...a,
             <CustomLabelInput
-                key={a.length}
-                labelName="Department"
-                inputType="text"
-                inputId="department"
-                placeHolder="Enter Department"
-                errMsg="Department is required"
-                width="100%"
+                key={a.length + currCount}
+                labelName={"Department " + currCount}
+                inputType="dropdown"
+                inputId={"department" + currCount}
+                optionsArray={depts}
             />,
         ]);
     };
 
-    depts = [
-        {
-            id: 1,
-            name: "Computer Science",
-        },
-        {
-            id: 2,
-            name: "Electronics",
-        },
-        {
-            id: 3,
-            name: "Mechanical",
-        },
-        {
-            id: 4,
-            name: "Civil",
-        },
-        {
-            id: 5,
-            name: "Electrical",
-        },
-    ];
-
     return (
-        <FlexBox>
-            <Typography mt={4} variant="h5" color="primary" fontWeight="bold">
+        <FlexBox
+            flexDirection={"column"}
+            width={"70%"}
+            alignItems={"flex-start"}
+        >
+            <Typography
+                mt={4}
+                variant="h5"
+                color="primary"
+                fontWeight="bold"
+                align="left"
+            >
                 Departments
             </Typography>
-            <FlexBox>
+            <FlexBox flexDirection={"column"} mt={1}>
                 <FlexBox flexDirection={"column"}>
                     {Array.from({ length: defaultRenderCount }).map((_, i) => (
                         <CustomLabelInput
                             key={i}
-                            labelName="Department"
-                            inputType="text"
-                            inputId="department"
-                            placeHolder="Enter Department"
-                            errMsg="Department is required"
-                            width="100%"
-                            mandatory={true}
+                            labelName={"Department " + (i + 1)}
+                            inputType="dropdown"
+                            inputId={"department" + (i + 1)}
+                            optionsArray={depts}
                         />
                     ))}
                     {additionalDepts}
                 </FlexBox>
-                <StyledButton
-                    variant="outlined"
-                    fullWidth
-                    onClick={handleAddDept}
-                >
+                <StyledButton variant="outlined" onClick={handleAddDept}>
                     Add Department
                 </StyledButton>
             </FlexBox>

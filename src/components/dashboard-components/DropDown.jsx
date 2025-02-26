@@ -9,6 +9,7 @@ export default function DropDown({
     width,
     optionsArray,
     backgroundcolor,
+    id,
     label,
 }) {
     const [filter, setFilter] = useState(optionsArray[0]);
@@ -37,6 +38,7 @@ export default function DropDown({
                 onChange={handleChange}
                 displayEmpty
                 inputProps={{ "aria-label": "Without label" }}
+                id={id}
             >
                 {menuItems}
             </StyledSelect>

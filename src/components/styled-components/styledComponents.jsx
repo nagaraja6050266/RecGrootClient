@@ -47,7 +47,7 @@ const CenteredBox = styled(Box)`
 const CustomLabel = Styled.label`
     color: ${(props) => (props.color ? props.color : "#223548")};
     font-weight: 600;
-    font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};
+    font-size: ${(props) => (props.fontSize ? props.fontSize : "15px")};
 `;
 
 //Custom Input and Label Container
@@ -192,7 +192,7 @@ const StyledSelect = styled(Select)`
     width: ${(props) => (props.width ? props.width : "100%")};
     color: ${(props) => (props.backgroundcolor ? "white" : "primary.main")};
     border-radius: 10px;
-    font-size: 11px;
+    font-size: 13px;
     margin: ${(props) => (props.margin ? props.margin : "0")}
     & .MuiSelect-icon {
         color: ${(props) => (props.backgroundcolor ? "white" : "black")};
