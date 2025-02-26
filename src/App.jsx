@@ -18,7 +18,7 @@ function App() {
         <Routes>
             <Route path="/test" element={<DepartmentAddComponent/>} />
             <Route path="/" element={<IntroPage />} />
-            <Route path="/student/signup" element={<StudentSignUpForm />} />
+            <Route path="/" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp/>} />
             <Route element={<IndexTemplate page={" "} />}>
                 <Route path="/signin" element={<SignInForm />} />
