@@ -1,24 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import IndexTemplate from "./components/indexTemplate";
 import MainComponent from "./pages/after-login/MainComponent";
-import { Dashboard } from "./pages/after-login/dashboard/index";
-import Students from "./pages/after-login/students/index.jsx";
-import Permissions from "./pages/after-login/permissions";
-import Settings from "./pages/after-login/settings";
-import IntroPage from "./pages/intro/index.jsx";
 import OtpForm from "./pages/password/otpForm";
 import PasswordForm from "./pages/password/passwordForm";
 import SignInForm from "./pages/signin/SignInForm";
-import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
+import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 
 function App() {
     return (
         <Routes>
             <Route path="/test" element={<DepartmentAddComponent/>} />
-            <Route path="/" element={<IntroPage />} />
-            <Route path="/" element={<StudentSignUpForm />} />
+            <Route path="/student/signup" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp/>} />
             <Route element={<IndexTemplate page={" "} />}>
                 <Route path="/signin" element={<SignInForm />} />
@@ -37,10 +31,6 @@ function App() {
                 />
             </Route>
             <Route element={<MainComponent />}>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/students" element={<Students />} />
-                <Route path="/permissions" element={<Permissions />} />
-                <Route path="/settings" element={<Settings />} />
             </Route>
         </Routes>
     );
@@ -48,4 +38,3 @@ function App() {
 
 export default App;
 
-// Just a chk
