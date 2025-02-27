@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
 
-export default function DashboardTable({ columns, rows }) {
+export default function CustomTable({ columns, rows }) {
 
     return (
         <Paper sx={{ width: "100%", overflow: "hidden" }}>

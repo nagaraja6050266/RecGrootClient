@@ -11,7 +11,7 @@ function AppNameComponent({ height, color, mt, ml, mr }) {
                 alt="appIcon"
             />
             <AppName $color={color} $fontSize={height ? height : "20px"}>
-                ParkXpert
+                RecGroot
             </AppName>
         </AppNameContainer>
     );

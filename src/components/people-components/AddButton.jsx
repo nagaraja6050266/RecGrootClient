@@ -2,10 +2,11 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function AddButton({
+export default function CustomButton({
     content = "Add",
     width = "fit-content",
     height = "fit-content",
+    icon
 }) {
     return (
         <Stack spacing={2} direction="row" sx={{ marginLeft: "15px" }}>
@@ -19,7 +20,7 @@ export default function AddButton({
                     fontSize: "17x",
                 }}
                 variant="contained"
-                startIcon={<AddIcon />}
+                startIcon={icon}
             >
                 {content}
             </Button>

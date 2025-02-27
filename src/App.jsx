@@ -7,6 +7,7 @@ import SignInForm from "./pages/signin/SignInForm";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
+import StudentsList from "./pages/after-login/students/StudentsList.jsx";
 
 function App() {
     return (
@@ -31,6 +32,8 @@ function App() {
                 />
             </Route>
             <Route element={<MainComponent />}>
+                <Route path="/" element={"Welcome"} />
+                <Route path="/rep/students" element={<StudentsList/>} />
             </Route>
         </Routes>
     );
