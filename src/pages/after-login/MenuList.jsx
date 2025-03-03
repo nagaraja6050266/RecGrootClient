@@ -31,7 +31,7 @@ export default function MenuList() {
                 navigate("/dashboard");
                 break;
             case 1:
-                navigate("/students");
+                navigate("/rep/students");
                 break;
             case 2:
                 navigate("/analytics");

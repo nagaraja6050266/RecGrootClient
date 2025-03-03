@@ -3,7 +3,7 @@ import { FlexBox } from "../../components/styled-components/styledComponents";
 import { Typography } from "@mui/material";
 import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
 import { StyledButton } from "../../components/styled-components/styledComponents";
-import { Add } from "@mui/icons-material";
+
 export function DepartmentAddComponent({ depts }) {
     const [additionalDepts, setAdditionalDepts] = useState([]);
 
@@ -52,7 +52,7 @@ export function DepartmentAddComponent({ depts }) {
                     ))}
                     {additionalDepts}
                 </FlexBox>
-                <StyledButton variant="outlined" onClick={handleAddDept} startIcon={<Add/>}>
+                <StyledButton variant="outlined" onClick={handleAddDept}>
                     Add Department
                 </StyledButton>
             </FlexBox>

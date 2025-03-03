@@ -13,5 +13,5 @@ export function ListEntitiesPage({ entity, captionLine, table, options }) {
             </Typography>
             <CustomTable columns={table.columns} rows={table.rows} />
         </FlexBox>
-    );
+    );  
 }

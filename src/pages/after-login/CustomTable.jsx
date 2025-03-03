@@ -6,9 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-
 export default function CustomTable({ columns, rows }) {
-
     return (
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -30,26 +28,28 @@ export default function CustomTable({ columns, rows }) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row, i) => {
-                            return (
-                                <TableRow
-                                    role="checkbox"
-                                    tabIndex={-1}
-                                    key={row.personID}
-                                >
-                                    {columns.map((column) => {
-                                        return (
-                                            <TableCell
-                                                key={column.id}
-                                                align={column.align}
-                                            >
-                                                {row[column.id]}
-                                            </TableCell>
-                                        );
-                                    })}
-                                </TableRow>
-                            );
-                        })}
+                        {rows.map((row, i) => (
+                            <TableRow
+                                role="checkbox"
+                                tabIndex={-1}
+                                key={i}
+                                onClick={row.invokeMethod}
+                                style={{
+                                    cursor: row.invokeMethod
+                                        ? "pointer"
+                                        : "default",
+                                }}
+                            >
+                                {columns.map((column) => (
+                                    <TableCell
+                                        key={column.id}
+                                        align={column.align}
+                                    >
+                                        {row[column.id]}
+                                    </TableCell>
+                                ))}
+                            </TableRow>
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>
