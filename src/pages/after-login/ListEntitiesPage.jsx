@@ -8,10 +8,10 @@ export function ListEntitiesPage({ entity, captionLine, table, options }) {
             <Typography variant="h5" color="primary" fontWeight="bold">
                 {entity}
             </Typography>
-            <Typography variant="body2" color="textSecondary"  mb={2}>
+            <Typography variant="body2" color="textSecondary" mb={2}>
                 {captionLine}
             </Typography>
             <CustomTable columns={table.columns} rows={table.rows} />
         </FlexBox>
-    );  
+    );
 }
