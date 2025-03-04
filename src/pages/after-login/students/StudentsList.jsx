@@ -36,5 +36,5 @@ const studentsData = {
 };
 
 export default function StudentsList() {
-    return <ListEntitiesPage {...studentsData} />;
+return <ListEntitiesPage {...studentsData} />;
 }

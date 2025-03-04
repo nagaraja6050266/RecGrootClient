@@ -13,7 +13,7 @@ function ListItemComponent({
     return (
         <StyledListItemButton
             selected={selected === index}
-            onClick={(event) => handleFunction(event, index)}
+            onClick={handleFunction}
         >
             <ListItemIcon>{icon}</ListItemIcon>
             <ListItemText primary={itemName} />
