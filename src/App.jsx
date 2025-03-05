@@ -8,11 +8,13 @@ import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import StudentsList from "./pages/after-login/students/StudentsList.jsx";
+import MiniListComponent from "./pages/after-login/MiniListComponent.jsx";
+import DetailsViewComponent from "./pages/after-login/DetailsViewComponent.jsx";
 
 function App() {
     return (
         <Routes>
-            <Route path="/test" element={<DepartmentAddComponent/>} />
+            <Route path="/test" element={<DetailsViewComponent/>} />
             <Route path="/student/signup" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp/>} />
             <Route element={<IndexTemplate page={" "} />}>
