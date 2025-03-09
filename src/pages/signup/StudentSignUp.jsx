@@ -6,7 +6,7 @@ import {
     FlexBox,
     StyledButton,
     StyledSpan,
-} from "../../components/styled-components/styledComponents";
+} from "../../components/common-components/styledComponents.jsx";
 import {
     GENDER_CONST,
     JOIN_TYPE_CONST,

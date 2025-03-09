@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Divider, List, Paper } from "@mui/material";
-import ListItemComponent from "../../components/dashboard-components/ListItemComponent";
+import ListItemComponent from "./ListItemComponent";
 import {
     DashboardRounded,
     School,

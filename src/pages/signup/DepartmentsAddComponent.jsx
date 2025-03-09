@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { FlexBox } from "../../components/styled-components/styledComponents";
+import { FlexBox } from "../../components/common-components/styledComponents";
 import { Typography } from "@mui/material";
-import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
-import { StyledButton } from "../../components/styled-components/styledComponents";
+import CustomLabelInput from "../../components/input-components/CustomLabelInput";
+import { StyledButton } from "../../components/common-components/styledComponents";
 
 export function DepartmentAddComponent({ depts }) {
     const [additionalDepts, setAdditionalDepts] = useState([]);

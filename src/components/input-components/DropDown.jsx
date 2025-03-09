@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
     CustomLabel,
     StyledSelect,
-} from "../styled-components/styledComponents";
+} from "../common-components/styledComponents";
 
 export default function DropDown({
     width,
@@ -25,7 +25,7 @@ export default function DropDown({
     ));
 
     return (
-        <FormControl sx={{gap: 0.5 }} size="small">
+        <FormControl sx={{ gap: 0.5 }} size="small">
             {label && (
                 <CustomLabel color="#5B738B" fontSize="10px">
                     {label}

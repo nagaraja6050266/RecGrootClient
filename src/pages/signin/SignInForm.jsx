@@ -5,8 +5,8 @@ import {
     FlexBox,
     StyledSpan,
     CenteredBox,
-} from "../../components/styled-components/styledComponents";
-import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
+} from "../../components/common-components/styledComponents";
+import CustomLabelInput from "../../components/input-components/CustomLabelInput";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import backbutton from "../../assets/backArrow.png";

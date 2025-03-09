@@ -1,4 +1,4 @@
-import { FlexBox } from "../../components/styled-components/styledComponents";
+import { FlexBox } from "../../components/common-components/styledComponents";
 import { Typography } from "@mui/material";
 import CustomTable from "./CustomTable";
 

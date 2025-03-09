@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
-import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
-import { FlexBox } from "../../components/styled-components/styledComponents";
+import CustomLabelInput from "../../components/input-components/CustomLabelInput";
+import { FlexBox } from "../../components/common-components/styledComponents";
 
 export function FormSegment({ segmentHeader, leftInput, rightInput }) {
     const getCustomLabelInput = (input, key) => {

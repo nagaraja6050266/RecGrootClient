@@ -5,8 +5,8 @@ import {
     CustomLabel,
     FlexBox,
     CenteredBox,
-} from "../../components/styled-components/styledComponents";
-import OTPinputs from "../../components/OTPinputs";
+} from "../../components/common-components/styledComponents";
+import OTPinputs from "../../components/input-components/OTPinputs";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import FormBackButton from "../../components/FormBackButton";
@@ -25,42 +25,42 @@ function OtpForm({ otpLength }) {
     };
 
     return (
-        <CenteredBox width='100%' height='100%'>
+        <CenteredBox width="100%" height="100%">
             <FormBackButton />
-        <FlexBox flexDirection="column" width="60%" justifyContent="center">
-            <Container>
-                <Typography
-                    variant="h4"
-                    component="h1"
-                    fontWeight="bold"
-                    align="center"
-                >
-                    Enter OTP
-                </Typography>
-                <Typography
-                    variant="body1"
-                    color="textSecondary"
-                    mb={3}
-                    align="center"
-                >
-                    An OTP has been sent to the Email <b>{email}</b>{" "}
-                    <StyledSpan href="/signin">Edit</StyledSpan>
-                </Typography>
-            </Container>
-            <FlexBox gap={4} flexDirection="column">
-                <FlexBox gap={2} flexDirection="column" padding={2}>
-                    <CustomLabel>Enter OTP</CustomLabel>
-                    <OTPinputs length={otpLength} />
+            <FlexBox flexDirection="column" width="60%" justifyContent="center">
+                <Container>
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                        fontWeight="bold"
+                        align="center"
+                    >
+                        Enter OTP
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        color="textSecondary"
+                        mb={3}
+                        align="center"
+                    >
+                        An OTP has been sent to the Email <b>{email}</b>{" "}
+                        <StyledSpan href="/signin">Edit</StyledSpan>
+                    </Typography>
+                </Container>
+                <FlexBox gap={4} flexDirection="column">
+                    <FlexBox gap={2} flexDirection="column" padding={2}>
+                        <CustomLabel>Enter OTP</CustomLabel>
+                        <OTPinputs length={otpLength} />
+                    </FlexBox>
+                    <StyledButton
+                        variant="contained"
+                        onClick={handleOTPVerification}
+                        fullWidth
+                    >
+                        Verify
+                    </StyledButton>
                 </FlexBox>
-                <StyledButton
-                    variant="contained"
-                    onClick={handleOTPVerification}
-                    fullWidth
-                >
-                    Verify
-                </StyledButton>
             </FlexBox>
-        </FlexBox>
         </CenteredBox>
     );
 }

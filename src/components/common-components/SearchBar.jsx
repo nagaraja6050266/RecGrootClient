@@ -1,6 +1,6 @@
 import { Search } from "@mui/icons-material";
 import { Box, InputBase } from "@mui/material";
-import { FlexBox } from "../styled-components/styledComponents";
+import { FlexBox } from "./styledComponents";
 
 function SearchBar({ placeHolder }) {
     return (

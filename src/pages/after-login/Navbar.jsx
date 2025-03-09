@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { ThemeProvider } from "styled-components";
-import AppNameComponent from "../../components/styled-components/AppNameComponent";
-import { Theme } from "../../components/styled-components/styledComponents";
-import MenuList from "./MenuList";
+import AppNameComponent from "../../components/common-components/AppNameComponent";
+import { Theme } from "../../components/common-components/styledComponents";
+import MenuList from "../../components/menu-bar-components/MenuList";
 
 function Navbar() {
     return (

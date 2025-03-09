@@ -1,5 +1,5 @@
-import {StyledCard} from "./styled-components/styledComponents";
-import AppNameComponent from "./styled-components/AppNameComponent";
+import { StyledCard } from "./common-components/styledComponents";
+import AppNameComponent from "./common-components/AppNameComponent";
 
 function IntroCard() {
     return (

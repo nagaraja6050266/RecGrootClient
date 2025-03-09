@@ -5,8 +5,8 @@ import {
     RightSide,
     LeftSide,
     StyledButton,
-} from "./styled-components/styledComponents";
-import AppNameComponent from "./styled-components/AppNameComponent";
+} from "./common-components/styledComponents";
+import AppNameComponent from "./common-components/AppNameComponent";
 import { Grid } from "@mui/material";
 import OtpForm from "../pages/password/otpForm";
 import { useNavigate } from "react-router-dom";

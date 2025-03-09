@@ -1,4 +1,4 @@
-import { StyledButton } from "./styled-components/styledComponents";
+import { StyledButton } from "./common-components/styledComponents";
 import backbutton from "../assets/backArrow.png";
 
 export default function FormBackButton() {

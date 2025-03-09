@@ -1,6 +1,5 @@
-import {AppNameContainer,AppName} from '../styled-components/styledComponents'
+import { AppNameContainer, AppName } from "./styledComponents";
 import appIcon from "../../assets/appIcon.png";
-
 
 function AppNameComponent({ height, color, mt, ml, mr }) {
     return (

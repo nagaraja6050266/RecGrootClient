@@ -1,9 +1,12 @@
 import { Visibility, VisibilityOff, Edit } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
-import { PasswordContainer, CustomInput } from "./styledComponents";
+import {
+    PasswordContainer,
+    CustomInput,
+} from "../common-components/styledComponents";
 
-function PasswordInput({ id, placeholder, errMsg,inputType }) {
+function PasswordInput({ id, placeholder, errMsg, inputType }) {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => {
@@ -21,12 +24,12 @@ function PasswordInput({ id, placeholder, errMsg,inputType }) {
                 id={id}
                 placeholder={placeholder}
             />
-            {inputType=='editable' && (
+            {inputType == "editable" && (
                 <IconButton edge="end">
                     <Edit />
                 </IconButton>
             )}
-            {inputType=='editable' || (
+            {inputType == "editable" || (
                 <IconButton
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}

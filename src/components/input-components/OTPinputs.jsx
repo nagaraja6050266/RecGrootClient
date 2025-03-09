@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { FlexBox } from "./styled-components/styledComponents";
-import { CustomInput } from "./styled-components/styledComponents";
+import { FlexBox } from "../common-components/styledComponents";
+import { CustomInput } from "../common-components/styledComponents";
 
 function OTPinputs({ length }) {
     const inputRefs = useRef([]);

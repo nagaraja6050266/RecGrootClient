@@ -1,6 +1,9 @@
 import { Container, Typography } from "@mui/material";
-import CustomLabelInput from "../../components/styled-components/CustomLabelInput";
-import { CenteredBox, StyledButton } from "../../components/styled-components/styledComponents";
+import CustomLabelInput from "../../components/input-components/CustomLabelInput";
+import {
+    CenteredBox,
+    StyledButton,
+} from "../../components/common-components/styledComponents";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -103,65 +106,67 @@ function PasswordForm({ page }) {
     };
 
     return (
-        <CenteredBox height='100%' width='100%'>
+        <CenteredBox height="100%" width="100%">
             <FormBackButton />
-        <form>
-            <Container>
-                <Typography
-                    variant="h4"
-                    component="h1"
-                    fontWeight="bold"
-                    align="center"
-                >
-                    {config.title}
-                </Typography>
-                <Typography
-                    variant="body1"
-                    color="textSecondary"
-                    mb={3}
-                    align="center"
-                >
-                    {config.subtitle}
-                </Typography>
-            </Container>
+            <form>
+                <Container>
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                        fontWeight="bold"
+                        align="center"
+                    >
+                        {config.title}
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        color="textSecondary"
+                        mb={3}
+                        align="center"
+                    >
+                        {config.subtitle}
+                    </Typography>
+                </Container>
 
-            {config.showPassword && (
-                <CustomLabelInput
-                    labelName="Password"
-                    inputType="password"
-                    inputId="enteredPassword"
-                    placeHolder="Enter your Password"
-                    errMsg=" "
-                />
-            )}
-            {config.showConfirmPassword && (
-                <CustomLabelInput
-                    labelName="Confirm Password"
-                    inputType="password"
-                    inputId="confirmPassword"
-                    placeHolder="Confirm your password"
-                    errMsg={confirmPasswordErrMsg}
-                />
-            )}
-            {config.showEmail && (
-                <CustomLabelInput
-                    labelName="Email"
-                    inputType="email"
-                    inputId="email"
-                    placeHolder="Enter your Email"
-                    errMsg=" "
-                />
-            )}
-            <StyledButton
-                sx={{ marginTop: "40px" }}
-                variant="contained"
-                type="submit"
-                onClick={config.showEmail ? navigateToOtp : handleSubmission}
-                fullWidth
-            >
-                Get Started
-            </StyledButton>
-        </form>
+                {config.showPassword && (
+                    <CustomLabelInput
+                        labelName="Password"
+                        inputType="password"
+                        inputId="enteredPassword"
+                        placeHolder="Enter your Password"
+                        errMsg=" "
+                    />
+                )}
+                {config.showConfirmPassword && (
+                    <CustomLabelInput
+                        labelName="Confirm Password"
+                        inputType="password"
+                        inputId="confirmPassword"
+                        placeHolder="Confirm your password"
+                        errMsg={confirmPasswordErrMsg}
+                    />
+                )}
+                {config.showEmail && (
+                    <CustomLabelInput
+                        labelName="Email"
+                        inputType="email"
+                        inputId="email"
+                        placeHolder="Enter your Email"
+                        errMsg=" "
+                    />
+                )}
+                <StyledButton
+                    sx={{ marginTop: "40px" }}
+                    variant="contained"
+                    type="submit"
+                    onClick={
+                        config.showEmail ? navigateToOtp : handleSubmission
+                    }
+                    fullWidth
+                >
+                    Get Started
+                </StyledButton>
+            </form>
         </CenteredBox>
     );
 }

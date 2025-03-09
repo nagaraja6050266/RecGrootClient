@@ -3,9 +3,9 @@ import {
     CustomLabel,
     CustomLabelInputContainer,
     StyledDatePicker,
-} from "./styledComponents";
+} from "../common-components/styledComponents";
 import PasswordInput from "./PasswordInput";
-import DropDown from "../dashboard-components/DropDown";
+import DropDown from "./DropDown";
 
 function CustomLabelInput({
     labelName,
@@ -14,8 +14,8 @@ function CustomLabelInput({
     placeHolder = "Enter " + labelName,
     errMsg = " ",
     width = "100%",
-    mandatory = false, 
-    optionsJson, 
+    mandatory = false,
+    optionsJson,
     optionsArray = optionsJson ? Object.values(optionsJson) : [],
 }) {
     return (
@@ -24,7 +24,11 @@ function CustomLabelInput({
             {inputType == "date" ? (
                 <StyledDatePicker />
             ) : inputType == "dropdown" ? (
-                <DropDown id={inputId} width={0} optionsArray={optionsArray}></DropDown>
+                <DropDown
+                    id={inputId}
+                    width={0}
+                    optionsArray={optionsArray}
+                ></DropDown>
             ) : inputType == "password" ? (
                 <PasswordInput
                     id={inputId}

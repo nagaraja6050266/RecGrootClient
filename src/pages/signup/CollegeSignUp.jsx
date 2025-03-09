@@ -4,7 +4,7 @@ import {
     FlexBox,
     StyledButton,
     StyledSpan,
-} from "../../components/styled-components/styledComponents";
+} from "../../components/common-components/styledComponents";
 import { Checkbox, Typography } from "@mui/material";
 import { FormSegment } from "./FormSegment";
 import { DepartmentAddComponent } from "./DepartmentsAddComponent";
@@ -32,7 +32,13 @@ import { DepartmentAddComponent } from "./DepartmentsAddComponent";
 //     },
 // ];
 
-const depts = ["Computer Science", "Electronics", "Mechanical", "Civil", "Electrical"];
+const depts = [
+    "Computer Science",
+    "Electronics",
+    "Mechanical",
+    "Civil",
+    "Electrical",
+];
 
 export function CollegeSignUp() {
     const fieldsJson = [

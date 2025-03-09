@@ -2,7 +2,7 @@ import AccessTimeFilledRoundedIcon from "@mui/icons-material/AccessTimeFilledRou
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { FlexBox, StyledCard } from "../styled-components/styledComponents";
+import { FlexBox, StyledCard } from "../common-components/styledComponents";
 
 function DateAndTime() {
     const [date, setDate] = useState(new Date());

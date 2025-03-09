@@ -1,7 +1,7 @@
 import React from "react";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { StyledListItemButton } from "../styled-components/styledComponents";
+import { StyledListItemButton } from "../common-components/styledComponents";
 
 function ListItemComponent({
     index,
