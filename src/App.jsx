@@ -7,16 +7,17 @@ import SignInForm from "./pages/signin/SignInForm";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
-import StudentsList from "./pages/after-login/students/StudentsList.jsx";
+import StudentsList from "./pages/students/StudentsList.jsx";
 import MiniListComponent from "./pages/after-login/MiniListComponent.jsx";
 import DetailsViewComponent from "./pages/after-login/DetailsViewComponent.jsx";
+import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 
 function App() {
     return (
         <Routes>
-            <Route path="/test" element={<DetailsViewComponent/>} />
+            <Route path="/test" element={<DetailsViewComponent />} />
             <Route path="/student/signup" element={<StudentSignUpForm />} />
-            <Route path="/institute/signup" element={<CollegeSignUp/>} />
+            <Route path="/institute/signup" element={<CollegeSignUp />} />
             <Route element={<IndexTemplate page={" "} />}>
                 <Route path="/signin" element={<SignInForm />} />
                 <Route
@@ -35,11 +36,14 @@ function App() {
             </Route>
             <Route element={<MainComponent />}>
                 <Route path="/" element={"Welcome"} />
-                <Route path="/rep/students" element={<StudentsList/>} />
+                <Route path="/rep/students" element={<StudentsList />} />
+                <Route
+                    path="/rep/students/:studentId"
+                    element={<StudentDetails />}
+                />
             </Route>
         </Routes>
     );
 }
 
 export default App;
-
