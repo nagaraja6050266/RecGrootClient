@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { FlexBox } from "../common-components/styledComponents";
 
 function OfficeLocation() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -14,25 +15,20 @@ function OfficeLocation() {
         setAnchorEl(null);
     };
 
+    const institute = {
+        name: "Government College of Engineering",
+        location: "Tirunelveli"
+    }
+
     return (
-        <Box width='100%' display="flex" alignItems="center" pl={2} pr={2}>
-            <Box>
-                <Typography variant="h7" component="div" fontWeight="bold">
-                    Icanio Office
+        <FlexBox flexDirection={"column"} alignItems={"flex-start"}>
+                <Typography variant="h4">
+                    {institute.name}
                 </Typography>
-                <Typography variant="body2" color="#8396A8" fontSize={12}>
-                    Tirunelveli
+                <Typography variant="body6" color="#8396A8">
+                    {institute.location}
                 </Typography>
-            </Box>
-            <IconButton onClick={handleClick}>
-                <ArrowDropDownIcon sx={{ color: "#0A2710", ml: 1 }} />
-            </IconButton>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                <MenuItem onClick={handleClose}>Option 1</MenuItem>
-                <MenuItem onClick={handleClose}>Option 2</MenuItem>
-                <MenuItem onClick={handleClose}>Option 3</MenuItem>
-            </Menu>
-        </Box>
+        </FlexBox>
     );
 }
 

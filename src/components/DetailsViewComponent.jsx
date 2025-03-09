@@ -1,4 +1,4 @@
-import { FlexBox } from "../../components/common-components/styledComponents";
+import { FlexBox } from "./common-components/styledComponents";
 import { Typography } from "@mui/material";
 
 const headerJson = {
@@ -55,9 +55,10 @@ function DetailsSegment({ detail, width }) {
                     width={"20%"}
                     alignItems={"flex-end"}
                 >
-                    {detail.values.map((value) => {
+                    {detail.values.map((value, i) => {
                         return (
                             <Typography
+                                key={i}
                                 fontSize={20}
                                 fontWeight={"bold"}
                                 color={"secondary"}
@@ -72,9 +73,9 @@ function DetailsSegment({ detail, width }) {
                     width={"80%"}
                     alignItems={"flex-start"}
                 >
-                    {detail.values.map((value) => {
+                    {detail.values.map((value, i) => {
                         return (
-                            <Typography fontSize={20}>{value.value}</Typography>
+                            <Typography key={i} fontSize={20}>{value.value}</Typography>
                         );
                     })}
                 </FlexBox>

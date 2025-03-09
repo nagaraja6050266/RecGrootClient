@@ -1,5 +1,5 @@
 import React from "react";
-import { ListEntitiesPage } from "../after-login/ListEntitiesPage";
+import { ListEntitiesPage } from "../../components/common-components/ListEntitiesPage";
 import { useNavigate } from "react-router-dom";
 
 export default function StudentsList() {

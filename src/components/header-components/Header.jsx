@@ -5,7 +5,7 @@ import UserProfile from "./UserProfile";
 
 function Header() {
     return (
-        <FlexBox pt={1} pb={1} height="fit-content" width="100%">
+        <FlexBox marginBottom={"solid black 2px"} boxShadow={"solid black"} p={1} height="fit-content">
             <OfficeLocation />
             <FlexBox alignItems="center" gap={2} justifyContent="flex-end">
                 <DateAndTime />

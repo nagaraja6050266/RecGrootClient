@@ -1,6 +1,6 @@
-import { FlexBox } from "../../components/common-components/styledComponents";
+import { FlexBox } from "./styledComponents";
 import { Typography } from "@mui/material";
-import CustomTable from "./CustomTable";
+import CustomTable from "../CustomTable";
 
 export function ListEntitiesPage({ entity, captionLine, table, options }) {
     return (

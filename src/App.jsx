@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import IndexTemplate from "./components/indexTemplate";
-import MainComponent from "./pages/after-login/MainComponent";
+import MainComponent from "./components/common-components/MainComponent.jsx";
 import OtpForm from "./pages/password/otpForm";
 import PasswordForm from "./pages/password/passwordForm";
 import SignInForm from "./pages/signin/SignInForm";
@@ -8,8 +8,8 @@ import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import StudentsList from "./pages/students/StudentsList.jsx";
-import MiniListComponent from "./pages/after-login/MiniListComponent.jsx";
-import DetailsViewComponent from "./pages/after-login/DetailsViewComponent.jsx";
+import MiniListComponent from "./components/common-components/MiniListComponent.jsx";
+import DetailsViewComponent from "./components/DetailsViewComponent.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 
 function App() {

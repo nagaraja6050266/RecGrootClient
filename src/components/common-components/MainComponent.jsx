@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Header from "../../components/header-components/Header";
+import Navbar from "../../pages/Navbar";
+import Header from "../header-components/Header";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 

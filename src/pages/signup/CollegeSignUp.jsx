@@ -6,7 +6,7 @@ import {
     StyledSpan,
 } from "../../components/common-components/styledComponents";
 import { Checkbox, Typography } from "@mui/material";
-import { FormSegment } from "./FormSegment";
+import { FormSegment } from "../../components/FormSegment";
 import { DepartmentAddComponent } from "./DepartmentsAddComponent";
 
 // const depts = [

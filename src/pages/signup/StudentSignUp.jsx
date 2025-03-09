@@ -12,7 +12,7 @@ import {
     JOIN_TYPE_CONST,
     LOC_TYPE_CONST,
 } from "../../Constants.js";
-import { FormSegment } from "./FormSegment.jsx";
+import { FormSegment } from "../../components/FormSegment.jsx";
 
 const Colleges = ["GCE", "Anna Univ", "FXEC"];
 const Departments = ["CSE", "ECE", "EEE"];

@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { FlexBox } from "../../components/common-components/styledComponents";
+import { FlexBox } from "./styledComponents";
 
 const miniListContent = {
     mainTxt: "Student Name",
