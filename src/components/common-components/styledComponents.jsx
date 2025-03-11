@@ -84,11 +84,13 @@ const CustomLabelInputContainer = Styled.div`
 
 //FlexBox
 const FlexBox = styled(CenteredBox)`
-    display: flex; /* Remove the quotes */
+    display: flex;
     align-items: ${({ alignItems }) => alignItems || "center"};
     flex-direction: ${({ flexDirection }) => flexDirection || "row"};
     width: ${({ width }) => width || "100%"};
     justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
+    box-shadow: ${({ shadow }) => shadow ? "rgba(149, 157, 165, 0.2) 0px 8px 24px;" : "none"};
+    border-radius: ${({ shadow }) => shadow ? "10px" : "0"};
 `;
 
 //Icon Container for intro page

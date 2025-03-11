@@ -1,9 +1,20 @@
-import { FlexBox } from "./common-components/styledComponents";
+import { Edit } from "@mui/icons-material";
+import { StatusComponent } from "./common-components/StatusComponent";
+import { FlexBox, StyledButton } from "./common-components/styledComponents";
 import { Typography } from "@mui/material";
+import HeaderOptions from "./HeaderOptions";
 
 const headerJson = {
     title: "Details",
     subtitle: "Info Goes Here",
+    status: "Open",
+    options: {
+        edit: {
+            invokeMethod: () => {
+                alert("Edit Clicked");
+            },
+        },
+    },
 };
 
 const detailsJson = [
@@ -43,10 +54,13 @@ function DetailsSegment({ detail, width }) {
     return (
         <FlexBox
             alignItems={"flex-start"}
+            my={2}
+            p={2}
             flexDirection={"column"}
             width={width}
+            shadow={true}
         >
-            <Typography mt={3} variant="h4" color="primary" fontWeight="bold">
+            <Typography variant="h4" color="primary" fontWeight="bold">
                 {detail.sectionHeader}
             </Typography>
             <FlexBox gap={2} mt={2}>
@@ -75,7 +89,9 @@ function DetailsSegment({ detail, width }) {
                 >
                     {detail.values.map((value, i) => {
                         return (
-                            <Typography key={i} fontSize={20}>{value.value}</Typography>
+                            <Typography key={i} fontSize={20}>
+                                {value.value}
+                            </Typography>
                         );
                     })}
                 </FlexBox>
@@ -91,17 +107,25 @@ export default function DetailsViewComponent({
 }) {
     return (
         <FlexBox
-            m={2}
+            p={2}
             flexDirection={"column"}
             alignItems={"flex-start"}
             width={width}
         >
-            <Typography variant="h3" color={"primary"}>
-                {header.title}
-            </Typography>
-            <Typography variant="body3" color={"secondary"}>
-                {header.subtitle}
-            </Typography>
+            <FlexBox alignItems={"space-between"}>
+                <FlexBox flexDirection={"column"} alignItems={"flex-start"}>
+                    <Typography variant="h3" color={"primary"}>
+                        {header.title}
+                    </Typography>
+                    <Typography variant="body3" color={"secondary"}>
+                        {header.subtitle}
+                    </Typography>
+                </FlexBox>
+                <FlexBox gap={2} width={"max-content"}>
+                    <HeaderOptions options={headerJson.options} />
+                    <StatusComponent status={headerJson.status} />
+                </FlexBox>
+            </FlexBox>
             {details.map((detail, i) => {
                 return <DetailsSegment key={i} detail={detail} />;
             })}

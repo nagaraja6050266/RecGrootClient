@@ -11,11 +11,12 @@ import StudentsList from "./pages/students/StudentsList.jsx";
 import MiniListComponent from "./components/common-components/MiniListComponent.jsx";
 import DetailsViewComponent from "./components/DetailsViewComponent.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
+import { StatusComponent } from "./components/common-components/StatusComponent.jsx";
 
 function App() {
     return (
         <Routes>
-            <Route path="/test" element={<DetailsViewComponent />} />
+            <Route path="/test" element={<StatusComponent />} />
             <Route path="/student/signup" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp />} />
             <Route element={<IndexTemplate page={" "} />}>
