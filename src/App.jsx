@@ -12,6 +12,12 @@ import MiniListComponent from "./components/common-components/MiniListComponent.
 import DetailsViewComponent from "./components/common-components/DetailsViewComponent.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 import { StatusComponent } from "./components/common-components/StatusComponent.jsx";
+import ApprovalsList from "./pages/approvals/ApprovalsList.jsx";
+import ApprovalDetails from "./pages/approvals/ApprovalDetails.jsx";
+import CompaniesList from "./pages/companies/CompaniesList.jsx";
+import CompanyDetails from "./pages/companies/CompanyDetails.jsx";
+import DrivesList from "./pages/drives/DrivesList.jsx";
+import DriveDetails from "./pages/drives/DriveDetails.jsx";
 
 function App() {
     return (
@@ -42,6 +48,18 @@ function App() {
                     path="/rep/students/:studentId"
                     element={<StudentDetails />}
                 />
+                <Route path="/rep/approvals" element={<ApprovalsList />} />
+                <Route
+                    path="/rep/approvals/:approvalId"
+                    element={<ApprovalDetails />}
+                />
+                <Route path="/rep/companies" element={<CompaniesList />} />
+                <Route
+                    path="/rep/companies/:companyId"
+                    element={<CompanyDetails />}
+                />
+                <Route path="/rep/drives" element={<DrivesList />} />
+                <Route path="/rep/drives/:driveId" element={<DriveDetails />} />
             </Route>
         </Routes>
     );

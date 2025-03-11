@@ -6,16 +6,6 @@ export function StudentDetails() {
     const { studentId } = useParams();
     const [studentDetails, setStudentDetails] = useState(null);
 
-    async function fetchStudentDetails() {
-        try {
-            const response = await fetch(`/api/students/${studentId}`);
-            const data = await response.json();
-            setStudentDetails(data);
-        } catch (error) {
-            console.error("Error fetching student details: ", error);
-        }
-    }
-
     function prepareInputFromResponse(response) {
         const { name, dob, email, phone, address } = response;
         return [
@@ -54,10 +44,23 @@ export function StudentDetails() {
 
     useEffect(() => {
         if (studentId) {
-            fetchStudentDetails();
+            // Use hardcoded values instead of fetching
+            const hardcodedStudentDetails = {
+                name: "John Doe",
+                dob: "2000-01-01",
+                email: "john.doe@example.com",
+                phone: "123-456-7890",
+                address: "123 Main St, Anytown, USA",
+            };
+            setStudentDetails(hardcodedStudentDetails);
         }
     }, [studentId]);
 
-    return <DetailsViewComponent />;
-    // return <DetailsViewComponent details={studentDetails} />;
+    return (
+        <DetailsViewComponent
+            details={
+                studentDetails ? prepareInputFromResponse(studentDetails) : []
+            }
+        />
+    );
 }

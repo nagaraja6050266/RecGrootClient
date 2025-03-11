@@ -28,19 +28,19 @@ const MenuItems = [
         itemName: "Companies",
         icon: <Business />,
         id: "companies",
-        navigation: "/companies",
+        navigation: "/rep/companies",
     },
     {
         itemName: "Drives",
         icon: <Event />,
         id: "drives",
-        navigation: "/drives",
+        navigation: "/rep/drives",
     },
     {
         itemName: "Approvals",
         icon: <CheckCircle />,
         id: "approvals",
-        navigation: "/approvals",
+        navigation: "/rep/approvals",
     },
     {
         itemName: "Settings",
