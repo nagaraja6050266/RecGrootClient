@@ -9,7 +9,7 @@ import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.j
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import StudentsList from "./pages/students/StudentsList.jsx";
 import MiniListComponent from "./components/common-components/MiniListComponent.jsx";
-import DetailsViewComponent from "./components/DetailsViewComponent.jsx";
+import DetailsViewComponent from "./components/common-components/DetailsViewComponent.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 import { StatusComponent } from "./components/common-components/StatusComponent.jsx";
 

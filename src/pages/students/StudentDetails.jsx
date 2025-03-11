@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DetailsViewComponent from "../../components/DetailsViewComponent";
+import DetailsViewComponent from "../../components/common-components/DetailsViewComponent";
 
 export function StudentDetails() {
     const { studentId } = useParams();
