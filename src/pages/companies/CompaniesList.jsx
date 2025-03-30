@@ -33,8 +33,7 @@ export default function CompaniesList() {
                 },
                 { companyID: 2, name: "Company 2", industry: "Finance" },
             ],
-        },
-        options: {},
+        }
     };
     return <ListEntitiesPage {...companiesData} />;
 }

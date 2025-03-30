@@ -9,11 +9,7 @@ const headerJson = {
     subtitle: "Info Goes Here",
     status: "Open",
     options: {
-        edit: {
-            invokeMethod: () => {
-                alert("Edit Clicked");
-            },
-        },
+        edit: {},
     },
 };
 
