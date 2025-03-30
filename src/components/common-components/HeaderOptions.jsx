@@ -2,12 +2,12 @@ import { Add, Edit } from "@mui/icons-material";
 import { FlexBox, StyledButton } from "./styledComponents";
 
 const defaultInvokeMethod = (button) => {
-    alert("Default " + button + " button clicked");
+    console.log("Default " + button + " button clicked");
 };
 
 export default function HeaderOptions({ options }) {
     return (
-        <FlexBox>
+        <FlexBox justifyContent={"flex-end"}>
             {options.edit && (
                 <StyledButton
                     variant="outlined"
