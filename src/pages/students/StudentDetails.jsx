@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DetailsViewComponent from "../../components/common-components/DetailsViewComponent";
 
 export function StudentDetails() {
     const { studentId } = useParams();
     const [studentDetails, setStudentDetails] = useState(null);
+    const navigate = useNavigate();
 
     function prepareInputFromResponse(response) {
         const { name, dob, email, phone, address } = response;
@@ -56,8 +57,23 @@ export function StudentDetails() {
         }
     }, [studentId]);
 
+    const headerJson = {
+        title: "Student Details",
+        subtitle: "Info Goes Here",
+        status: "Open",
+        options: {
+            edit: {
+                invokeMethod: () => {
+                    navigate(`students/${studentId}/edit`)
+                }
+            },
+        },
+    };
+    
+
     return (
         <DetailsViewComponent
+            header={headerJson}
             details={
                 studentDetails ? prepareInputFromResponse(studentDetails) : []
             }

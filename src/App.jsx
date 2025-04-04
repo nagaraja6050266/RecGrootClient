@@ -15,11 +15,12 @@ import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 import StudentsList from "./pages/students/StudentsList.jsx";
+import { StudentDetailsEdit } from "./pages/students/StudentDetailsEdit.jsx";
 
 function App() {
     return (
         <Routes>
-            <Route path="/test" element={<StatusComponent />} />
+            <Route path="/test" element={<StudentDetailsEdit />} />
             <Route path="/student/signup" element={<StudentSignUpForm />} />
             <Route path="/institute/signup" element={<CollegeSignUp />} />
             <Route element={<IndexTemplate page={" "} />}>
@@ -57,6 +58,7 @@ function App() {
                 />
                 <Route path="/rep/drives" element={<DrivesList />} />
                 <Route path="/rep/drives/:driveId" element={<DriveDetails />} />
+                <Route path="/students/:studentId/edit" element={<StudentDetailsEdit />} />
             </Route>
         </Routes>
     );
