@@ -1,23 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import IndexTemplate from "./components/indexTemplate";
 import MainComponent from "./components/common-components/MainComponent.jsx";
+import { StatusComponent } from "./components/common-components/StatusComponent.jsx";
+import IndexTemplate from "./components/indexTemplate";
+import ApprovalDetails from "./pages/approvals/ApprovalDetails.jsx";
+import ApprovalsList from "./pages/approvals/ApprovalsList.jsx";
+import CompaniesList from "./pages/companies/CompaniesList.jsx";
+import CompanyDetails from "./pages/companies/CompanyDetails.jsx";
+import DriveDetails from "./pages/drives/DriveDetails.jsx";
+import DrivesList from "./pages/drives/DrivesList.jsx";
 import OtpForm from "./pages/password/otpForm";
 import PasswordForm from "./pages/password/passwordForm";
 import SignInForm from "./pages/signin/SignInForm";
 import { CollegeSignUp } from "./pages/signup/CollegeSignUp.jsx";
-import { DepartmentAddComponent } from "./pages/signup/DepartmentsAddComponent.jsx";
 import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
-import StudentsList from "./pages/students/StudentsList.jsx";
-import MiniListComponent from "./components/common-components/MiniListComponent.jsx";
-import DetailsViewComponent from "./components/common-components/DetailsViewComponent.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
-import { StatusComponent } from "./components/common-components/StatusComponent.jsx";
-import ApprovalsList from "./pages/approvals/ApprovalsList.jsx";
-import ApprovalDetails from "./pages/approvals/ApprovalDetails.jsx";
-import CompaniesList from "./pages/companies/CompaniesList.jsx";
-import CompanyDetails from "./pages/companies/CompanyDetails.jsx";
-import DrivesList from "./pages/drives/DrivesList.jsx";
-import DriveDetails from "./pages/drives/DriveDetails.jsx";
+import StudentsList from "./pages/students/StudentsList.jsx";
 
 function App() {
     return (

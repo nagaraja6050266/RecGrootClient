@@ -13,6 +13,7 @@ import {
     LOC_TYPE_CONST,
 } from "../../Constants.js";
 import { FormSegment } from "../../components/FormSegment.jsx";
+import { FormHeader } from "../../components/FormHeader.jsx";
 
 const Colleges = ["GCE", "Anna Univ", "FXEC"];
 const Departments = ["CSE", "ECE", "EEE"];
@@ -247,15 +248,11 @@ function StudentSignUp() {
     return (
         <CenteredBox mt={10} mb={10}>
             <Box width="60%">
-                <Box pl={0}>
-                    <Typography variant="h4" component="h1" fontWeight="bold">
-                        Sign Up
-                    </Typography>
-                    <Typography variant="body1" color="textSecondary">
-                        Enter your details below to create your account
-                    </Typography>
-                </Box>
-
+                <FormHeader
+                    heading="Sign Up"
+                    subheading="Enter your details below to create your account"
+                />
+                
                 {fieldsJson.map((segment, i) => (
                     <FormSegment
                         segmentHeader={segment.segmentHeader}

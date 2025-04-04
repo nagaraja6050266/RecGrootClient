@@ -8,6 +8,7 @@ import {
 import { Checkbox, Typography } from "@mui/material";
 import { FormSegment } from "../../components/FormSegment";
 import { DepartmentAddComponent } from "./DepartmentsAddComponent";
+import { FormHeader } from "../../components/FormHeader";
 
 // const depts = [
 //     {
@@ -79,14 +80,10 @@ export function CollegeSignUp() {
     return (
         <CenteredBox mt={10} mb={10}>
             <Box width="60%">
-                <Box pl={0}>
-                    <Typography variant="h4" component="h1" fontWeight="bold">
-                        Institute Sign Up
-                    </Typography>
-                    <Typography variant="body1" color="textSecondary">
-                        Enter institute details below to create your account
-                    </Typography>
-                </Box>
+                <FormHeader
+                    heading="Institute Sign Up"
+                    subheading="Enter institute details below to create your account"
+                />
 
                 {fieldsJson.map((segment, i) => (
                     <FormSegment

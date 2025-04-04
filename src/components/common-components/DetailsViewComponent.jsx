@@ -3,6 +3,7 @@ import { StatusComponent } from "./StatusComponent";
 import { FlexBox, StyledButton } from "./styledComponents";
 import { Typography } from "@mui/material";
 import HeaderOptions from "./HeaderOptions";
+import { FormHeader } from "../FormHeader";
 
 const headerJson = {
     title: "Details",
@@ -109,14 +110,11 @@ export default function DetailsViewComponent({
             width={width}
         >
             <FlexBox alignItems={"space-between"}>
-                <FlexBox flexDirection={"column"} alignItems={"flex-start"}>
-                    <Typography variant="h3" color={"primary"}>
-                        {header.title}
-                    </Typography>
-                    <Typography variant="body3" color={"secondary"}>
-                        {header.subtitle}
-                    </Typography>
-                </FlexBox>
+                <FormHeader
+                    style={{ pb: "0" }}
+                    heading={header.title}
+                    subheading={header.subtitle}
+                />
                 <FlexBox gap={2} width={"max-content"}>
                     <HeaderOptions options={headerJson.options} />
                     <StatusComponent status={headerJson.status} />
