@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { FlexBox } from "../../components/common-components/styledComponents.jsx";
 import { FormHeader } from "../../components/FormHeader.jsx";
 import { EnableButton } from "../../components/input-components/EnableButton.jsx";
-
+import CustomLabelInput from "../../components/input-components/CustomLabelInput.jsx";
 
 const settings = {
     enableBtns: [
@@ -17,8 +17,8 @@ const settings = {
     ],
     inputBtns: [
         {
-            labelName: "Full Name",
-            inputId: "name",
+            labelName: "Maximum number of attempts allowed for single student",
+            inputId: "maxAttempts",
         },
     ],
 };
@@ -35,7 +35,19 @@ export function Settings() {
                         checked={enableBtn.isChecked}
                     />
                 ))}
-                
+                {settings.inputBtns.map((btn, i) => (
+                    <CustomLabelInput
+                        gap={20}
+                        labelWeight={"100"}
+                        labelColor={"black"}
+                        labelName={btn.labelName}
+                        inputId={btn.inputId}
+                        inputType="number"
+                        flexType={"row"}
+                        defaultValue="50"
+                        inputWidth="20%"
+                    />
+                ))}
             </FlexBox>
         </FlexBox>
     );

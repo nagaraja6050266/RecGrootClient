@@ -53,7 +53,7 @@ const CustomLabel = Styled.label`
 //Custom Input and Label Container
 
 const CustomInput = Styled.input`
-    width: ${(props) => (props.type === "otp" ? "60px" : "inherit")};
+    width: ${(props) => (props.type === "otp" ? "60px" : props.width)};
     height: ${(props) => (props.type === "otp" ? "60px" : "35px")} ;
     border-radius: 5px;
     border: solid 1px #D5DADD;

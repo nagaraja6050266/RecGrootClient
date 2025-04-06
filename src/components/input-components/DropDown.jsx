@@ -6,7 +6,6 @@ import {
 } from "../common-components/styledComponents";
 
 export default function DropDown({
-    width,
     optionsArray,
     backgroundcolor,
     id,
@@ -25,14 +24,13 @@ export default function DropDown({
     ));
 
     return (
-        <FormControl sx={{ gap: 0.5 }} size="small">
+        <FormControl fullWidth sx={{ gap: 0.5 }} size="small">
             {label && (
                 <CustomLabel color="#5B738B" fontSize="10px">
                     {label}
                 </CustomLabel>
             )}
             <StyledSelect
-                width={width}
                 backgroundcolor={backgroundcolor}
                 value={filter}
                 onChange={handleChange}
