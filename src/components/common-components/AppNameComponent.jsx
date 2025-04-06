@@ -1,5 +1,6 @@
 import { AppNameContainer, AppName } from "./styledComponents";
 import appIcon from "../../assets/appIcon.png";
+import { APP_NAME } from "../../Constants";
 
 function AppNameComponent({ height, color, mt, ml, mr }) {
     return (
@@ -10,7 +11,7 @@ function AppNameComponent({ height, color, mt, ml, mr }) {
                 alt="appIcon"
             />
             <AppName $color={color} $fontSize={height ? height : "20px"}>
-                RecGroot
+                {APP_NAME}
             </AppName>
         </AppNameContainer>
     );

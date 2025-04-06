@@ -13,3 +13,4 @@ export const MALE = "Male";
 export const FEMALE = "Female";
 export const OTHERS = "Others";
 export const GENDER_CONST=[MALE,FEMALE,OTHERS];    
+export const APP_NAME="RecGroot";
