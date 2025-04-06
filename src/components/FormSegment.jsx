@@ -28,8 +28,8 @@ export function FormSegment({ segmentHeader, leftInput, rightInput }) {
     );
 
     return (
-        <>
-            <Typography mt={4} variant="h5" color="primary" fontWeight="bold">
+        <FlexBox mt={3} flexDirection={"column"} alignItems={"flex-start"}>
+            <Typography variant="h5" color="primary" fontWeight="bold">
                 {segmentHeader}
             </Typography>
 
@@ -37,6 +37,6 @@ export function FormSegment({ segmentHeader, leftInput, rightInput }) {
                 <FlexBox flexDirection={"column"}>{...leftInputs}</FlexBox>
                 <FlexBox flexDirection={"column"}>{...rightInputs}</FlexBox>
             </FlexBox>
-        </>
+        </FlexBox>
     );
 }

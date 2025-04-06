@@ -1,5 +1,8 @@
 import { Box } from "@mui/material";
-import { FlexBox } from "../../components/common-components/styledComponents.jsx";
+import {
+    FlexBox,
+    StyledButton,
+} from "../../components/common-components/styledComponents.jsx";
 import { FormHeader } from "../../components/FormHeader.jsx";
 import { EnableButton } from "../../components/input-components/EnableButton.jsx";
 import CustomLabelInput from "../../components/input-components/CustomLabelInput.jsx";
@@ -49,6 +52,9 @@ export function Settings() {
                     />
                 ))}
             </FlexBox>
+            <StyledButton sx={{ mt: 2 }} width="8%" variant="contained">
+                Save
+            </StyledButton>
         </FlexBox>
     );
 }

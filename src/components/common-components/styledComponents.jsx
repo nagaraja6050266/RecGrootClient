@@ -122,6 +122,7 @@ const StyledButton = styled(Button)`
     border-radius: 10px;
     height: 40px;
     font-size: 12px;
+    width: ${(props) => props.width};
 `;
 
 //Card
