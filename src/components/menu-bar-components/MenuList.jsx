@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Divider, List, Paper } from "@mui/material";
 import ListItemComponent from "./ListItemComponent";
 import {
@@ -9,7 +9,7 @@ import {
     CheckCircle,
     Settings,
 } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MenuItems = [
     {
@@ -53,11 +53,22 @@ const MenuItems = [
 export default function MenuList() {
     const navigate = useNavigate();
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const path = useParams();
 
     const handleListItemClick = (index, navigation) => {
         setSelectedIndex(index);
         navigate(navigation);
     };
+
+    useEffect(() => {
+        const currentPath = window.location.pathname;
+        const currentIndex = MenuItems.findIndex((item) =>
+            currentPath.includes(item.navigation)
+        );
+        if (currentIndex !== -1) {
+            setSelectedIndex(currentIndex);
+        }
+    }, [selectedIndex]);
 
     return (
         <Box>
