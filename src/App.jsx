@@ -16,6 +16,7 @@ import StudentSignUpForm from "./pages/signup/StudentSignUp.jsx";
 import { StudentDetails } from "./pages/students/StudentDetails.jsx";
 import StudentsList from "./pages/students/StudentsList.jsx";
 import { StudentDetailsEdit } from "./pages/students/StudentDetailsEdit.jsx";
+import { Settings } from "./pages/settings/Settings.jsx";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                 />
             </Route>
             <Route element={<MainComponent />}>
+                <Route path="/rep/settings" element={<Settings />} />
                 <Route path="/" element={"Welcome"} />
                 <Route path="/rep/students" element={<StudentsList />} />
                 <Route
@@ -58,7 +60,10 @@ function App() {
                 />
                 <Route path="/rep/drives" element={<DrivesList />} />
                 <Route path="/rep/drives/:driveId" element={<DriveDetails />} />
-                <Route path="/students/:studentId/edit" element={<StudentDetailsEdit />} />
+                <Route
+                    path="/students/:studentId/edit"
+                    element={<StudentDetailsEdit />}
+                />
             </Route>
         </Routes>
     );

@@ -46,7 +46,7 @@ const MenuItems = [
         itemName: "Settings",
         icon: <Settings />,
         id: "settings",
-        navigation: "/settings",
+        navigation: "/rep/settings",
     },
 ];
 

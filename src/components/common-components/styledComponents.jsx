@@ -46,7 +46,7 @@ const CenteredBox = styled(Box)`
 
 const CustomLabel = Styled.label`
     color: ${(props) => (props.color ? props.color : "#223548")};
-    font-weight: 600;
+    font-weight: ${(props) => (props.weight ? props.weight : "600")};
     font-size: ${(props) => (props.fontSize ? props.fontSize : "15px")};
 `;
 
