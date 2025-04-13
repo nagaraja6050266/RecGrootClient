@@ -48,6 +48,11 @@ function App() {
                     path="/rep/students/:studentId"
                     element={<StudentDetails />}
                 />
+
+                <Route
+                    path="rep/students/:studentId/edit"
+                    element={<StudentDetailsEdit />}
+                />
                 <Route path="/rep/approvals" element={<ApprovalsList />} />
                 <Route
                     path="/rep/approvals/:approvalId"
@@ -60,10 +65,6 @@ function App() {
                 />
                 <Route path="/rep/drives" element={<DrivesList />} />
                 <Route path="/rep/drives/:driveId" element={<DriveDetails />} />
-                <Route
-                    path="/students/:studentId/edit"
-                    element={<StudentDetailsEdit />}
-                />
             </Route>
         </Routes>
     );

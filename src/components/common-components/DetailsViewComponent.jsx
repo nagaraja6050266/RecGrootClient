@@ -116,8 +116,8 @@ export default function DetailsViewComponent({
                     subheading={header.subtitle}
                 />
                 <FlexBox gap={2} width={"max-content"}>
-                    <HeaderOptions options={headerJson.options} />
-                    <StatusComponent status={headerJson.status} />
+                    <HeaderOptions options={header.options} />
+                    <StatusComponent status={header.status} />
                 </FlexBox>
             </FlexBox>
             {details.map((detail, i) => {

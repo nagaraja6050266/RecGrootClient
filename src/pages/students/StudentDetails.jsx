@@ -64,7 +64,7 @@ export function StudentDetails() {
         options: {
             edit: {
                 invokeMethod: () => {
-                    navigate(`students/${studentId}/edit`)
+                    navigate("edit")
                 }
             },
         },
