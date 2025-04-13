@@ -42,7 +42,7 @@ function App() {
             </Route>
             <Route element={<MainComponent />}>
                 <Route path="/rep/settings" element={<Settings />} />
-                <Route path="/" element={"Welcome"} />
+                <Route path="/dashboard" element={"Welcome"} />
                 <Route path="/rep/students" element={<StudentsList />} />
                 <Route
                     path="/rep/students/:studentId"

@@ -1,6 +1,11 @@
 import { EditPage } from "../../components/EditPage";
-import { JOIN_TYPE_CONST, GENDER_CONST, LOC_TYPE_CONST } from "../../Constants";
+import {
+    JOIN_TYPE_CONST,
+    GENDER_CONST,
+    LOC_TYPE_CONST,
+} from "../../components/constants/Constants";
 import { useState } from "react";
+import { getDefaultStudentDetailsLabelsArray } from "../../components/constants/InputLabelsConstants";
 
 export function StudentDetailsEdit() {
     const [isChecked, setIsChecked] = useState(true);
@@ -8,9 +13,6 @@ export function StudentDetailsEdit() {
     const [fullnameErrorMsg, setFullnameErrorMsg] = useState(" ");
     const [mobileErrorMsg, setMobileErrorMsg] = useState(" ");
     const [pincodeErrMsg, setPicodeErrMsg] = useState(" ");
-
-    const Colleges = ["GCE", "Anna Univ", "FXEC"];
-    const Departments = ["CSE", "ECE", "EEE"];
 
     let fullname, email, mobileNumber;
 
@@ -41,159 +43,19 @@ export function StudentDetailsEdit() {
         }
         return true;
     }
+    
     const handleCheck = () => {
         setIsChecked(!isChecked);
     };
+        
+    const errMsgs = {
+        email: emailErrorMsg,
+        fullName: fullnameErrorMsg,
+        mobNo: mobileErrorMsg,
+        pincode: pincodeErrMsg,
+    };
 
-    const studentsInputFieldsArray = [
-        {
-            segmentHeader: "Personal Details",
-            leftInput: [
-                {
-                    labelName: "Full Name",
-                    inputId: "name",
-                    errMsg: fullnameErrorMsg,
-                },
-                {
-                    labelName: "Date of Birth",
-                    inputId: "dob", //Date type should be added
-                },
-            ],
-            rightInput: [
-                {
-                    labelName: "Gender",
-                    inputId: "gender",
-                    inputType: "dropdown",
-                    optionsArray: GENDER_CONST,
-                },
-                {
-                    labelName: "Parents Number",
-                    inputId: "parentNo",
-                },
-            ],
-        },
-        {
-            segmentHeader: "Contact Details",
-            leftInput: [
-                {
-                    labelName: "Email",
-                    inputType: "email",
-                    inputId: "email",
-                    errMsg: emailErrorMsg,
-                },
-                {
-                    labelName: "LinkedIn Profile Link",
-                    inputId: "linkedInLink",
-                },
-            ],
-            rightInput: [
-                {
-                    labelName: "Mobile Number",
-                    inputId: "mobile",
-                    errMsg: mobileErrorMsg,
-                },
-                {
-                    labelName: "Other link",
-                    inputId: "otherLink",
-                },
-            ],
-        },
-        {
-            segmentHeader: "Address",
-            leftInput: [
-                {
-                    labelName: "Address Line 1",
-                    inputId: "addressLine1",
-                },
-                {
-                    labelName: "Landmark",
-                    inputId: "landmark",
-                },
-                {
-                    labelName: "District",
-                    inputId: "district",
-                },
-                {
-                    labelName: "Pincode",
-                    inputId: "pincode",
-                },
-            ],
-            rightInput: [
-                {
-                    labelName: "Address Line 2",
-                    inputId: "addressLine2",
-                },
-                {
-                    labelName: "City",
-                    inputId: "city",
-                },
-                {
-                    labelName: "State",
-                    inputId: "state",
-                },
-                {
-                    labelName: "Location Type",
-                    inputId: "locationType",
-                    inputType: "dropdown",
-                    optionsArray: LOC_TYPE_CONST,
-                },
-            ],
-        },
-        {
-            segmentHeader: "Academic Details",
-            leftInput: [
-                {
-                    labelName: "College",
-                    inputType: "dropdown",
-                    inputId: "college",
-                    optionsArray: Colleges,
-                },
-                {
-                    labelName: "Register Number",
-                    inputId: "regNo",
-                },
-                {
-                    labelName: "Joining Type",
-                    inputId: "joinType",
-                    inputType: "dropdown",
-                    optionsArray: JOIN_TYPE_CONST,
-                },
-                {
-                    labelName: "CGPA",
-                    inputId: "cgpa",
-                },
-                {
-                    labelName: "HSC/Diploma Percentage",
-                    inputId: "hscDiplomaPercentage",
-                },
-            ],
-            rightInput: [
-                {
-                    labelName: "Department",
-                    inputId: "department",
-                    inputType: "dropdown",
-                    optionsArray: Departments,
-                },
-
-                {
-                    labelName: "Date of Joining",
-                    inputId: "date",
-                },
-                {
-                    labelName: "Graduation Year",
-                    inputId: "graduationYear",
-                },
-                {
-                    labelName: "SSLC Percentage",
-                    inputId: "sslcPercentage",
-                },
-                {
-                    labelName: "Placement Status",
-                    inputId: "placementStatus",
-                },
-            ],
-        },
-    ];
+    const studentsInputFieldsArray = getDefaultStudentDetailsLabelsArray(errMsgs);
 
     return (
         <EditPage
